@@ -12,7 +12,7 @@ export default function Home() {
         <h1 className="text-2xl">Your rsa keys</h1>
         <div className="flex flex-row gap-2">
           <Button onClick={() => { navigate("/add-keypair") }} color="primary">Add keypair</Button>
-          <Button onClick={() => { console.log("add public key") }} color="secondary">Add public key</Button>
+          <Button onClick={() => { navigate("/add-public-key") }} color="secondary">Add public key</Button>
         </div>
       </div>
       <KeysList />

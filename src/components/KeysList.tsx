@@ -17,6 +17,9 @@ export default function KeysList() {
         if (keys[key]?.publicKey && keys[key]?.privateKey) {
             navigate(`/keyPair/${key}`);
         }
+        else if (keys[key]?.publicKey) {
+            navigate(`/publicKey/${key}`);
+        }
     }
 
     const handleDeleteKey = (e: React.MouseEvent, name: string) => {

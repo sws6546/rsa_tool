@@ -117,4 +117,14 @@ export default class RSAHandler {
 
         return new TextDecoder().decode(decrypted);
     }
+
+    savePublicKey(name: string, publicKey: string) {
+        const stored = localStorage.getItem("keys");
+        const keys: Record<string, { publicKey: string; privateKey: string }> = stored
+            ? JSON.parse(stored)
+            : {};
+
+        keys[name] = { publicKey, privateKey: "" };
+        localStorage.setItem("keys", JSON.stringify(keys));
+    }
 }
